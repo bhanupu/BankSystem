@@ -26,6 +26,7 @@ public class BankFile {
             choice = (char) br.read();
         }
         while (choice=='y'||choice=='Y');
+        userchoice();
     }
     public void write() throws IOException {
         FileOutputStream op = new FileOutputStream("CustomerData", true);
@@ -106,6 +107,7 @@ public class BankFile {
         DataOutputStream dop = new DataOutputStream(op);
         dop.writeInt(amount);
         System.out.println("Total Avail Balance:"+" "+amount);
+        userchoice();
     }
 
     public void withdrawn() throws IOException{
@@ -128,6 +130,7 @@ public class BankFile {
         }
 
         System.out.println("Total Avail Balance:" +amount);
+        userchoice();
     }
 
     public void check() throws IOException {
@@ -143,6 +146,7 @@ public class BankFile {
         } else {
             System.out.println("Account does not exist.");
         }
+        userchoice();
     }
 
 
